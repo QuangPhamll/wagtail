@@ -17,9 +17,8 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {# Global stylesheets #}
+        {# Global css #}
         {% compress css %}
-{#            <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_site.css' %}">#}
             <link rel="stylesheet" type="text/x-scss" href="{% static "css/wagtail_site.scss" %}" />
         {% endcompress %}
 
@@ -34,7 +33,11 @@
         {% block content %}{% endblock %}
 
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/wagtail_site.js' %}"></script>
+        {% compress js %}
+            <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/wagtail_site.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        {% endcompress %}
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}

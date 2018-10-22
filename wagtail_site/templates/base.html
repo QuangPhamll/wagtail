@@ -1,4 +1,4 @@
-{% load static wagtailuserbar %}
+{% load static wagtailuserbar compress %}
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -18,7 +18,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_site.css' %}">
+        {% compress css %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_site.css' %}">
+        {% endcompress %}
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}

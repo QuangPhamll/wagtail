@@ -136,6 +136,12 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+# Set custom settings for compressor
+# ------------------------------------------------------------------------------
+INSTALLED_APPS += ['compressor']
+STATICFILES_FINDERS += ['compressor.finders.CompressorFinder']
+COMPRESS_ENABLED = True
+
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'static'),
 ]

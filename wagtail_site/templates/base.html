@@ -29,7 +29,7 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <div class="container-fluid">{% block content %}{% endblock %}</div>
 
         {# Global javascript #}
         {% compress js %}

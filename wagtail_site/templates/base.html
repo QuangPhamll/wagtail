@@ -19,7 +19,8 @@
 
         {# Global stylesheets #}
         {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_site.css' %}">
+{#            <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_site.css' %}">#}
+            <link rel="stylesheet" type="text/x-scss" href="{% static "css/wagtail_site.scss" %}" />
         {% endcompress %}
 
         {% block extra_css %}
